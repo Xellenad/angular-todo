@@ -11,9 +11,26 @@ export class TodoComponent implements OnInit {
   todos: Todo[] = []
   inputText: string = ''
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
+
+  add() {
+    if (this.inputText.trim()) {
+      this.todos.push({
+        text: this.inputText,
+        done: false
+      });
+      this.inputText = ''
+    }
+  }
+
+  delete(idx: number) {
+    this.todos = this.todos.filter((v, i) => i !== idx);
+  }
+
 
 }
