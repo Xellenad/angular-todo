@@ -18,10 +18,11 @@ export class TodoComponent implements OnInit {
 
   add() {
     if (this.inputText.trim()) {
-      this.todos.push({
+      const todo: Todo = {
         text: this.inputText,
         done: false,
-      });
+      }
+      this.todos.push(todo);
       this.inputText = ''
     }
   }
