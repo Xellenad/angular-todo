@@ -1,4 +1,4 @@
-<div class="todos">
+<div>
 
   <form>
     <input
@@ -14,9 +14,9 @@
       (click)="add()"/>
   </form>
 
-  <div class="todo" *ngFor="let todo of todos; let idx = index;">
+  <div class="todo {{ (todo.done ? 'done' : '') }}" *ngFor="let todo of todos; let idx = index;">
     <p class="number">{{ idx + 1 }}</p>
-    <p class="text">{{ todo.text }}</p>
+    <p class="text" (click)="toggleDone(idx)">{{ todo.text }} </p>
 
     <button class="todo-delete" (click)="delete(idx)">Delete</button>
   </div>

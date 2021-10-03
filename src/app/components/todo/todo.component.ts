@@ -22,15 +22,22 @@ export class TodoComponent implements OnInit {
     if (this.inputText.trim()) {
       this.todos.push({
         text: this.inputText,
-        done: false
+        done: false,
       });
       this.inputText = ''
     }
   }
 
   delete(idx: number) {
-    this.todos = this.todos.filter((v, i) => i !== idx);
+    this.todos = this.todos.filter((t, i) => i !== idx);
   }
 
+
+  toggleDone(idx: number) {
+    this.todos.map((t, i) => {
+      if (i == idx) t.done = !t.done;
+      return t;
+    })
+  }
 
 }
