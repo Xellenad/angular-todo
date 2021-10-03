@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Todo } from '../../shared/todo.interface';
 
 @Component({
@@ -11,12 +12,9 @@ export class TodoComponent implements OnInit {
   todos: Todo[] = []
   inputText: string = ''
 
-  constructor() {
+  constructor() {}
 
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   add() {
     if (this.inputText.trim()) {

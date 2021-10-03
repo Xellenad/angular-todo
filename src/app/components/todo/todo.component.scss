@@ -11,6 +11,7 @@
 
 .todo .text {
   flex: 1 1 100%;
+  font-weight: bold;
 }
 
 .todo:nth-child(even) {
@@ -23,6 +24,7 @@
 
 .todo.done .text {
   text-decoration: line-through;
+  text-decoration-color: #FE4880;
 }
 
 .todo-input {
