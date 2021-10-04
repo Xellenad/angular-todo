@@ -7,7 +7,13 @@
       name="input"
       placeholder="Enter text..."
       class="todo-input"
-      [(ngModel)]="inputText"/>
+      [(ngModel)]="inputText"
+      #input="ngModel"
+      required
+    />
+<!--    <div *ngIf="input.invalid && input.touched">-->
+<!--      <small>Enter text...</small>-->
+<!--    </div>-->
 
     <input
       type="text"
