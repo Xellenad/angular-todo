@@ -11,6 +11,7 @@ export class TodoComponent implements OnInit {
 
   todos: Todo[] = []
   inputText: string = ''
+  searchText: string = ''
 
   constructor() {}
 

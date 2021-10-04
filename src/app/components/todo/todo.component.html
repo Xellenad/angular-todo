@@ -1,20 +1,32 @@
 <div>
 
   <form>
+
     <input
       type="text"
       name="input"
       placeholder="Enter text..."
       class="todo-input"
       [(ngModel)]="inputText"/>
+
+    <input
+      type="text"
+      name="input"
+      placeholder="Search text..."
+      class="todo-input"
+      [(ngModel)]="searchText"/>
+
     <input
       type="submit"
       value="Add Todo"
       class="todo-submit"
       (click)="add()"/>
+
   </form>
 
-  <div class="todo {{ (todo.done ? 'done' : '') }}" *ngFor="let todo of todos; let idx = index;">
+  <div
+    class="todo {{ (todo.done ? 'done' : '') }}"
+    *ngFor="let todo of todos | filter:searchText; let idx = index;">
     <p class="number">{{ idx + 1 }}</p>
     <p class="text" (click)="toggleDone(idx)">{{ todo.text }} </p>
 
